@@ -54,7 +54,7 @@ export class CountriesViewComponent implements OnInit {
     this.makeTheCountryView(this.regionName)
     }
 
-  
+// List of countries respective to region is displayed
   public makeTheCountryView=(regionName)=>{
     this.appService.countriesView(regionName)
     .subscribe((apiResponse)=>{
@@ -63,20 +63,8 @@ export class CountriesViewComponent implements OnInit {
         console.log(apiResponse);
         this.data=apiResponse
         this.appService.countryData(this.data)
-        console.log(this.appService.allCountries[0]);
-        
-        
-        
-      }
-      
-    })
-
-    
-
-    
-
-   
+        console.log(this.appService.allCountries[0]);    
+      }    
+    })  
   }
-  
-
 }
