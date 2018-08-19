@@ -1,0 +1,17 @@
+
+    <div class="row" >
+      
+      <div class="card mb-4" style="width: 18rem;padding:40px;margin: 20px;" *ngFor='let datas of data; let i = index'>
+        <img class="card-img-top"  src="{{datas.flag}}" alt="Card image cap">
+        <div class="card-body" >
+            
+          <h5 class="card-title">{{datas.name}}</h5>
+          
+          
+          <a class="btn btn-primary" (click)="redirect(i)">View details</a>
+        </div>
+      </div>
+      
+      </div>
+      <a class="btn btn-warning" (click)="goBack()">Back</a>
+    

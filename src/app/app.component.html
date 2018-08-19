@@ -1,0 +1,24 @@
+
+
+    <div class="container" style="text-align: center">
+      <div class="row header">
+        <div class="col-md-12">
+          <h1 style="color:white">WorldAtlas</h1>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg d-flex  navbar-light bg-light">
+          
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" (click)="setflag($event)" onsubmit="setFlag(event)"  [routerLink]="[('/RegionView')]" >Home </a>
+              <a class="nav-item nav-link" [routerLink]="">About</a>
+              <a class="nav-item nav-link" [routerLink]="">Contacts</a>
+             
+            </div>
+          </div>
+        </nav>
+        
+        <router-outlet></router-outlet>
+    </div>
+    
+   

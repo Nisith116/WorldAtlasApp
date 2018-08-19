@@ -1,0 +1,42 @@
+<div class="container" *ngIf=(flag1)>
+<div class="card text-center" *ngFor="let datas of final; let i = index" >
+    <div class="card-header">
+      <img style="height:250px;" src="{{datas.flag}}" alt="">
+    </div>
+    <div class="card-body">
+      <h3 class="card-title" >Country: {{countryName}}</h3>
+      <h3>Capital : {{viewHtml.capital}}</h3>
+      <label for="currency"><h3>Currency: &nbsp;</h3></label>
+      <a class="btn btn-primary" name="language" style="left: 100px;" (click)="currencyView()" >{{viewHtml.currencyName}}</a>&nbsp;Click the currency button to filter countries respective to it <br>
+      <label for="currency"><h3>Language: &nbsp;</h3></label>
+      <a class="btn btn-primary" name="language" (click)="languageView()" >{{viewHtml.languageName}}</a>&nbsp;Click the language button to filter countries respective to it <br>
+      
+      <h3>Subregion : {{viewHtml.subregion}}</h3>
+      <h3>Population : {{viewHtml.population}}</h3>
+      <h3>TimeZone : {{viewHtml.timeZones}}</h3>
+      <p class="card-text"></p>
+      <a class="btn btn-warning" (click)="goBack()">Back</a>
+    </div>
+    
+  </div>
+</div>
+  <div class="container" *ngIf=(flag2)>
+      <h3 style="text-align: center" *ngIf="(flag3)">Countries having currency {{viewHtml.currencyName}}</h3>
+      <h3 style="text-align: center" *ngIf="(flag3 == false)">Countries having language {{viewHtml.languageName}}</h3>
+      <br>
+      <div class="row">
+        
+        <div class="card mb-4" style="width: 18rem;padding:40px;margin: 20px;" *ngFor='let datas of filterData; let i = index'>
+          <img class="card-img-top"  src="{{datas.flag}}" alt="Card image cap">
+          <div class="card-body" >
+              
+            <h5 class="card-title">{{datas.name}}</h5>
+           
+            
+            <a class="btn btn-primary" (click)="redirect(i)" >Go somewhere</a>
+          </div>
+        </div>
+        
+        </div>
+        <a class="btn btn-warning" (click)="goBack()">Back</a>
+    </div>

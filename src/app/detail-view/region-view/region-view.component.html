@@ -1,0 +1,42 @@
+
+ <div class="btn-group justify-content-end" *ngIf=(flag) style="margin-left: 400px;" dropdown>
+  <button id="button-basic" dropdownToggle type="button" class="btn {{button}} dropdown-toggle"
+          aria-controls="dropdown-basic">
+    {{category}} <span class="caret"></span>
+  </button>
+  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+      role="menu" aria-labelledby="button-basic">
+    <li role="menuitem" ><a class="dropdown-item" (click)="setId(1)" onsubmit="return false">Country</a></li>
+   
+    <li role="menuitem"><a class="dropdown-item" (click)="setId(2)" onsubmit="return false">Capital city</a></li>
+    <li role="menuitem"><a class="dropdown-item" (click)="setId(3)" onsubmit="return false">Back to menu</a></li>
+    <li class="divider dropdown-divider"></li>
+    
+  </ul>
+
+<form class="form-inline my-2 my-lg-0" >
+    <input class="form-control mr-sm-2" #myForm  type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0"  type="button" (click)="countrySearch(myForm.value)"  onsubmit="return false">Search</button>
+  </form>
+</div>
+
+<div class="container">
+    
+  <div class="centre" style="text-align: center;padding:20px;" >
+
+      <h3>Click on the continents to view countries respective to that continent.</h3>
+      
+      <img src="http://www.justmaps.org/maps/images/world-maps.gif" alt="worldmap" usemap="#worldmap">
+      <map name="worldmap">
+        <area shape="rect" coords="35,105,170,120" (click)='makeTheCountryView("americas")' onsubmit="return false"  alt="Americas">
+        <area shape="rect" coords="75,210,200,225" (click)='makeTheCountryView("americas")' onsubmit="return false"  alt="Americas">
+        <area shape="rect" coords="260,140,335,158" (click)='makeTheCountryView("africa")' onsubmit="return false"  alt="Africa">
+        <area shape="rect" coords="236,75,305,85" (click)='makeTheCountryView("europe")' onsubmit="return false"  alt="Europe">
+        <area shape="rect" coords="425,125,470,140" (click)='makeTheCountryView("asia")' onsubmit="return false"  alt="Asia">
+        <area shape="circle" coords="500,240,40" (click)='makeTheCountryView("oceania")' onsubmit="return false"  alt="Oceania">
+      
+      
+      </map>
+  </div>
+</div>
+  
