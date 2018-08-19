@@ -40,19 +40,16 @@ export class SingleCountryViewComponent implements OnInit {
   public countrySearchName:any;
   public allData:any;
   
+  
   public viewHtml:countryView;
 
   ngOnInit() {
     this.index = this.routes.snapshot.paramMap.get('id');
-    
     this.countryName = (this.index)?(this.appService.allCountries[this.index].name):''
-    
-    
-    
-    
     this.singleCountryView(this.countryName)
   }
 
+  // List of countries respective to currency is displayed
   public currencyView=()=>{
     console.log(this.currency);
     this.flag1=false;
@@ -60,12 +57,8 @@ export class SingleCountryViewComponent implements OnInit {
     this.flag3=true
     this.appService.currencyFilter(this.viewHtml.currency)
     .subscribe((data)=>{
-      this.filterData= data
-      console.log(this.filterData);
-      
-    })
-    
-    
+      this.filterData= data 
+    }) 
   }
 
   public goBack=()=>{
@@ -73,11 +66,10 @@ export class SingleCountryViewComponent implements OnInit {
   }
 
   public searchView=(data)=>{
-   
     this.allData =  this.appService.allData();
-  
   }
 
+  // List of countries respective to language is displayed
   public languageView=()=>{
     console.log(this.language);
     this.flag1=false;
@@ -86,13 +78,11 @@ export class SingleCountryViewComponent implements OnInit {
     this.appService.languageFilter(this.viewHtml.language)
     .subscribe((data)=>{
       this.filterData= data
-      console.log(this.filterData);
-     
+      console.log(this.filterData); 
     })
-    
   }
 
-  
+  // Single country respective to country name is displayed
   public singleCountryView=(countryName)=>{
     this.appService.singleCountryView(countryName)
     .subscribe((data)=>{
@@ -119,32 +109,17 @@ export class SingleCountryViewComponent implements OnInit {
           console.log(this.viewHtml.currencyName);
           console.log(this.viewHtml.languageName);
           
-          console.log(this.viewHtml);
-          
-          
-          
-          
-          
-        }
-        
+          console.log(this.viewHtml);  
+        } 
       }
-      console.log(this.data[this.countryIndex].currencies[0].name);
-      
-      
-      
     })
   }
 
   public redirect=(i)=>{
     this.final=[]
-    
-    console.log(i);
     this.languageIndex=this.filterData[i].name;
     console.log(this.languageIndex);
     this.flag2=false;
-    
-    
-      this.singleCountryView(this.languageIndex)
-      
+    this.singleCountryView(this.languageIndex) 
   }
 }
