@@ -10,24 +10,13 @@ import { ToastrService } from '../../node_modules/ngx-toastr';
 })
 export class AppComponent implements OnInit {
   title = 'worldMap';
-  public data: any=[];
-  public i:any;
-  id: any;
-  public flag:boolean=true;
-
+  
   public category:any='Select category'
-  constructor(
-    public appService:AppService,
-    public toastr:ToastrService,
-    public route:Router
-  ){}
-  ngOnInit(
-   
-  ){
-    this.flag= true;
-  }
+  constructor(){}
+  
+  ngOnInit(){}
+  
   public setflag=(event)=>{
-    
     this.category='Select category'
     event.preventDefault()
   }
