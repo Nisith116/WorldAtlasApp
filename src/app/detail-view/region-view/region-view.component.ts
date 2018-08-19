@@ -36,8 +36,6 @@ export class RegionViewComponent implements OnInit {
    
   }
   public makeTheCountryView=(regionName)=>{
-    console.log(regionName);
-    
       this.appService.countriesView(regionName)
       .subscribe((data)=>{
         this.countryData = data
@@ -66,13 +64,10 @@ export class RegionViewComponent implements OnInit {
         }
       }
     
-      
+      // Single country respective to searched country or capital city  is displayed
       public countrySearch=(country)=>{
-        console.log(country);
-        
         if(this.id == 1){
           this.category='Country'
-          
         this.appService.singleCountryView(country)
         .subscribe((data)=>{
           console.log(data);
