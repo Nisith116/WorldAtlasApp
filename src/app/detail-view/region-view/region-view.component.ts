@@ -78,33 +78,20 @@ export class RegionViewComponent implements OnInit {
           console.log(data);
           this.flag=false
           for (let j = 0; j < data.length; j++) {
-            this.data[j]=data[j]
-            
+            this.data[j]=data[j] 
           }
-          
+   
           for (let index = 0; index < this.data.length; index++) {
             if(country.toLowerCase() === this.data[index].name.toLowerCase()){
-              this.i = index
-              console.log(this.i);
-              
-            }
-            
+              this.i = index 
+            }  
           }
           this.appService.countryData(this.data)
         this.route.navigate(['/countriesView',this.i])
-        
-
         },
         err=>{
-          this.toastr.error("Please enter valid Country")
-          
-        }
-      )
-        
-      
-
-        
-        
+          this.toastr.error("Please enter valid Country") 
+        })  
       }
         
         else if(this.id==2){
@@ -119,20 +106,10 @@ export class RegionViewComponent implements OnInit {
             this.route.navigate(['/countriesView',this.i])
           },
           err=>{
-            this.toastr.error("Please enter valid Capital City")
-            
-          }
-        )
-        }
-        
+            this.toastr.error("Please enter valid Capital City") 
+          })
+        } 
       }
-    
-      public capitalView=(capital)=>{
-        
-      }
-    
-
-   
   }
 
   
