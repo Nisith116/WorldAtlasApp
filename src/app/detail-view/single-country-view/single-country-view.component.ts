@@ -40,7 +40,7 @@ export class SingleCountryViewComponent implements OnInit {
   public countrySearchName:any;
   public allData:any;
   
-//   Interface type declared
+//  Type Interface declared
   public viewHtml:countryView;
 
   ngOnInit() {
